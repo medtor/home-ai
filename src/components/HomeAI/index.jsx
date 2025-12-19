@@ -13,7 +13,7 @@ import ResultsDisplay from './ResultsDisplay';
 import Footer from './Footer';
 import Toast from '../ui/Toast';
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
+// const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || ''; // Supprimez ou commentez cette ligne
 
 const HomeAI = () => {
   const [selectedStyle, setSelectedStyle] = useState('');
@@ -51,7 +51,8 @@ const HomeAI = () => {
   const handleGenerate = useCallback(async () => {
     if (!originalImage || !selectedStyle) return;
     
-    const success = await generate(originalImage, selectedStyle, API_KEY);
+    // N'envoyez plus la clé API ici
+    const success = await generate(originalImage, selectedStyle); // MODIFIÉ ICI
     
     if (success) {
       showToast('Design généré avec succès!', 'success');
