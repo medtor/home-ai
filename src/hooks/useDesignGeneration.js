@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import { generateDesignDirect } from '../services/geminiApi';
-
+// Avant: import { generateDesignDirect } from '../services/geminiApi';
+import { generateDesign } from '../services/geminiApi'; // APRES
 export const useDesignGeneration = () => {
   const [generatedImage, setGeneratedImage] = useState(null);
   const [designReport, setDesignReport] = useState('');
@@ -59,4 +59,5 @@ export const useDesignGeneration = () => {
     generate,
     reset,
   };
+
 };
